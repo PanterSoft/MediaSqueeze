@@ -88,10 +88,12 @@ Requirements: Xcode 16 or later and [XcodeGen](https://github.com/yonaskolb/Xcod
 
 In Xcode, select your development team under *Signing & Capabilities* and run on a device. The simulator works, but its photo library is small and its hardware encoder is slow.
 
-Run the core unit tests without Xcode:
+Or use the Makefile:
 
 ```bash
-swift test --package-path Packages/SqueezeCore
+make open     # generate the Xcode project and open it
+make test     # run the core unit tests without Xcode
+make build    # build the app for the iOS Simulator
 ```
 
 CI (GitHub Actions) runs the core tests and builds the app for the iOS Simulator on every push and pull request.

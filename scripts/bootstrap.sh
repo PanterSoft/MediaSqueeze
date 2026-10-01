@@ -13,7 +13,8 @@ if ! command -v xcodegen >/dev/null 2>&1; then
   fi
 fi
 
-xcodegen generate
-if [[ "${1:-}" != "--no-open" ]]; then
-  open MediaSqueeze.xcodeproj
+if [[ "${1:-}" == "--no-open" ]]; then
+  make generate
+else
+  make open
 fi
